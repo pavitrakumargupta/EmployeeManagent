@@ -15,7 +15,7 @@ const EmployeesListPage = () => {
   useEffect(() => {
     localStorage.getItem("user") &&
       setIsmanager(
-        JSON.parse(localStorage.getItem("user")).position === "manager"
+        JSON.parse(localStorage.getItem("user"))?.position === "manager"
       );
   }, []);
 

@@ -16,7 +16,7 @@ const Header = () => {
       <h1 className="text-xl hover:text-blue-400 cursor-pointer">
         <div className="flex gap-12">
           <Link to="/">Home</Link> 
-          {user.position === "manager"&&<Link to="/department">Department</Link>}
+          {user?.position === "manager"&&<Link to="/department">Department</Link>}
         </div>
       </h1>
       {user ? (

@@ -117,7 +117,7 @@ const Signup = () => {
               className="w-full p-2 h-full outline-none"
               id="position"
               required
-              value={formDetails.position}
+              value={formDetails?.position}
               onChange={formDetailsChange}
             >
               <option value="Select position" defaultChecked>
