@@ -13,7 +13,7 @@ const Department = () => {
   let user = JSON.parse(localStorage.getItem('user'));
 
   useEffect(() => {
-    user && setIsManager(user.position === 'manager');
+    user && setIsManager(user.position && user.position === 'manager');
     department();
     getAllUsers()
   }, []);
