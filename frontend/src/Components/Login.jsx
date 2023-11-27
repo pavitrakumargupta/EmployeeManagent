@@ -22,7 +22,7 @@ const Login = () => {
     try {
       
         e.preventDefault();
-        const {data}=await axios.post("http://localhost:5000/SignIn",formData);
+        const {data}=await axios.post("https://employee-management-g816.onrender.com/SignIn",formData);
         setAuthStatus(true)
         console.log(data);
         localStorage.setItem("user", JSON.stringify(data));

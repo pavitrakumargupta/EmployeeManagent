@@ -17,7 +17,7 @@ const HomeContextProvider = ({ children }) => {
   },[])
 
   const getAllEmployee=async()=>{
-    const {data}=await axios.get("http://localhost:5000/getAllUsers")
+    const {data}=await axios.get("https://employee-management-g816.onrender.com/getAllUsers")
     setEmployees(data)
   }
 

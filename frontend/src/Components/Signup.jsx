@@ -22,7 +22,7 @@ const Signup = () => {
   async function handleSignup(e) {
     try {
       e.preventDefault();
-      const {data}=await axios.post("http://localhost:5000/Signup",formDetails);
+      const {data}=await axios.post("https://employee-management-g816.onrender.com/Signup",formDetails);
       navigate("/login");
     } catch (error) {
       console.log(error);

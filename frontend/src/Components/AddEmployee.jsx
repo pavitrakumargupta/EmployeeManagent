@@ -16,7 +16,7 @@ const AddEmployee = ({ setIsAddEmployeeBtnClicked }) => {
             setError('Please fill all the fields')
         }
         else {
-            const {data}=await axios.post("http://localhost:5000/Signup",newEmployeeDetails);
+            const {data}=await axios.post("https://employee-management-g816.onrender.com/Signup",newEmployeeDetails);
             setEmployees([...employees, data])
             setIsAddEmployeeBtnClicked(prev => !prev)
         }

@@ -20,7 +20,7 @@ const Department = () => {
 
   const getAllUsers=async()=>{
     try {
-        const {data}=await axios.get("http://localhost:5000/getAllUsers")
+        const {data}=await axios.get("https://employee-management-g816.onrender.com/getAllUsers")
         setAllusers(data)
     } catch (error) {
         console.log(error);
@@ -30,7 +30,7 @@ const Department = () => {
   const department = async () => {
     try {
       let array = [];
-      let { data } = await axios.post('http://localhost:5000/getAllDepartment', {
+      let { data } = await axios.post('https://employee-management-g816.onrender.com/getAllDepartment', {
         _id: user._id,
       });
       await Promise.all(
@@ -40,7 +40,7 @@ const Department = () => {
             name: key.name,
             employees: [],
           };
-          let { data } = await axios.post('http://localhost:5000/getAllUsersByDepartment', {
+          let { data } = await axios.post('https://employee-management-g816.onrender.com/getAllUsersByDepartment', {
             _id: user._id,
             departmentId: key._id,
           });
@@ -57,7 +57,7 @@ const Department = () => {
   const createDepartment = async () => {
     try {
       if (newDepartmentName.trim() !== '') {
-        const { data } = await axios.post('http://localhost:5000/createDepartment', {
+        const { data } = await axios.post('https://employee-management-g816.onrender.com/createDepartment', {
           name: newDepartmentName,
           assignedBy: user._id,
         });
@@ -76,7 +76,7 @@ const Department = () => {
     try {
       let user=allusers.find(key=>key.email===email)
       if (user) {
-        await axios.post('http://localhost:5000/updateDetail', { employeeId: user._id, department:departmentId });
+        await axios.post('https://employee-management-g816.onrender.com/updateDetail', { employeeId: user._id, department:departmentId });
         department();
       } else {
         console.log('User not found');
@@ -88,7 +88,7 @@ const Department = () => {
 
   const updateDepartmentName = async (departmentId, newName) => {
     try {
-      await axios.post(`http://localhost:5000/updateDepartmentName`, {departmentId,departmentName: newName });
+      await axios.post(`https://employee-management-g816.onrender.com/updateDepartmentName`, {departmentId,departmentName: newName });
       department();
     } catch (error) {
       console.log(error);
@@ -97,7 +97,7 @@ const Department = () => {
 
   const deleteDepartment = async (departmentId) => {
     try {
-      await axios.post(`http://localhost:5000/deleteDepartment`,{departmentId});
+      await axios.post(`https://employee-management-g816.onrender.com/deleteDepartment`,{departmentId});
       department();
     } catch (error) {
       console.log(error);
@@ -108,7 +108,7 @@ const Department = () => {
         console.log();
       let user = allusers.find((key) => key.email === email);
       if (user) {
-        await axios.post('http://localhost:5000/updateDetail', {
+        await axios.post('https://employee-management-g816.onrender.com/updateDetail', {
           employeeId: user._id,
           department: newDepartmentId,
         });
